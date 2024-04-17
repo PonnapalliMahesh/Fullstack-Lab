@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transportation Information</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #c25124; /* Background color */
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff; /* Container background color */
+        border-radius: 5px;
+    }
+    .input-group {
+        margin-bottom: 20px;
+    }
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .input-group input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #c25124;
+        cursor: pointer;
+    }
+    .buttons button:hover {
+        background-color: #a93c17;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="input-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="input-group">
+        <label for="bus_no">Bus Number:</label>
+        <input type="text" id="bus_no" name="bus_no" required>
+    </div>
+    <div class="input-group">
+        <label for="route">Route:</label>
+        <input type="text" id="route" name="route" required>
+    </div>
+    <div class="input-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+    </div>
+    <div class="buttons">
+        <button id="view">View</button>
+        <button id="edit">Edit</button>
+        <button id="submit" disabled>Submit</button>
+    </div>
+</div>
+
+<script>
+    // Get input fields
+    const nameInput = document.getElementById('name');
+    const busNoInput = document.getElementById('bus_no');
+    const routeInput = document.getElementById('route');
+    const phoneInput = document.getElementById('phone');
+
+    // Get buttons
+    const viewButton = document.getElementById('view');
+    const editButton = document.getElementById('edit');
+    const submitButton = document.getElementById('submit');
+
+    // Function to check if all fields are filled
+    function checkFields() {
+        if (nameInput.value.trim() !== '' && 
+            busNoInput.value.trim() !== '' && 
+            routeInput.value.trim() !== '' && 
+            phoneInput.value.trim() !== '') {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+
+    // Event listeners
+    nameInput.addEventListener('input', checkFields);
+    busNoInput.addEventListener('input', checkFields);
+    routeInput.addEventListener('input', checkFields);
+    phoneInput.addEventListener('input', checkFields);
+
+    // Functionality for "View" button (Example)
+    viewButton.addEventListener('click', function() {
+        // You can implement view functionality here
+        alert('View button clicked');
+    });
+
+    // Functionality for "Edit" button (Example)
+    editButton.addEventListener('click', function() {
+        // You can implement edit functionality here
+        alert('Edit button clicked');
+    });
+
+    // Functionality for "Submit" button (Example)
+    submitButton.addEventListener('click', function() {
+        // You can implement submit functionality here
+        alert('Submit button clicked');
+    });
+</script>
+
+</body>
+</html>

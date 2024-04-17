@@ -1,0 +1,26 @@
+.category-table {
+  border: 1px solid #ccc;
+}
+
+.category-table th,
+.category-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+body {
+  background-color: #fffffc; 
+}
+
+
+
+
+.watermark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.1);
+  transform: rotate(-45deg);
+}
+
+

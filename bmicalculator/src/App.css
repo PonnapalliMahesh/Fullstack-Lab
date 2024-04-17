@@ -1,0 +1,104 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial','sans-serif';
+  background-color: #f2f2f2;
+}
+h1{
+  color: #333;
+}
+.category-container{
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto;
+}
+.category-table{
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto;
+}
+.category-table th{
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.75em;
+  color: #333;
+}
+.category-table td{
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: left;
+  font-size: 0.75em;
+  color: #333;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container{
+  margin-top: 20px;
+}
+.table-container{
+  width:50%;
+  margin-top: 5px;
+}
+label{
+  margin: 10px;
+  font-size: 1em;
+  color: #333;
+}
+input{
+  padding: 10px;
+  font-size: 0.9em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+button{
+  margin-top: 15px;
+  padding: 12px 24px;
+  font-size: 0.75em;
+  cursor:pointer;
+  background-color: #0e0789;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.result-container{
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f4e433;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.meter-container{
+  width: 300px;
+  height: 20px;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+.meter{
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+.result-container p{
+  margin: 10px 0;
+  font-size: 1em;
+  color: #333;
+}
+.watermark{
+  position: fixed;
+  bottom: 10px;
+  right:10px;
+  color:rgba(0,0,0,0.4);
+  font-size: 0.8em;
+}

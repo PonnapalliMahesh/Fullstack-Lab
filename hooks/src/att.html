@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance System</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #c25124; /* Background color */
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff; /* Container background color */
+    }
+    .options {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .options select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    .student-list {
+        display: none;
+    }
+    .student-list-item {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .student-name {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+    .attendance-radio {
+        display: flex;
+    }
+    .attendance-radio label {
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="options">
+        <select id="userType">
+            <option value="admin">Admin</option>
+            <option value="faculty">Faculty</option>
+        </select>
+        <select id="year" class="options" style="display:none">
+            <option value="year1">Year 1</option>
+            <option value="year2">Year 2</option>
+            <option value="year3">Year 3</option>
+            <option value="year4">Year 4</option>
+        </select>
+        <select id="branch" class="options" style="display:none">
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="mech">Mechanical</option>
+            <option value="civil">Civil</option>
+        </select>
+        <select id="section" class="options" style="display:none">
+            <option value="a">Section A</option>
+            <option value="b">Section B</option>
+            <option value="c">Section C</option>
+            <option value="d">Section D</option>
+        </select>
+    </div>
+    <div class="student-list">
+        <!-- Student list will be displayed here -->
+        <ul id="studentList"></ul>
+    </div>
+</div>
+
+<script>
+    const userTypeSelect = document.getElementById('userType');
+    const yearSelect = document.getElementById('year');
+    const branchSelect = document.getElementById('branch');
+    const sectionSelect = document.getElementById('section');
+    const studentListDiv = document.querySelector('.student-list');
+
+    userTypeSelect.addEventListener('change', function() {
+        if (this.value === 'faculty') {
+            yearSelect.style.display = 'block';
+        } else {
+            yearSelect.style.display = 'none';
+            branchSelect.style.display = 'none';
+            sectionSelect.style.display = 'none';
+            studentListDiv.style.display = 'none';
+        }
+    });
+
+    yearSelect.addEventListener('change', function() {
+        branchSelect.style.display = 'block';
+    });
+
+    branchSelect.addEventListener('change', function() {
+        sectionSelect.style.display = 'block';
+    });
+
+    sectionSelect.addEventListener('change', function() {
+        // In a real implementation, you would fetch the student list based on selected options and display it here
+        studentListDiv.style.display = 'block';
+        const studentList = document.getElementById('studentList');
+        // Example students
+        const students = ['Student 1', 'Student 2', 'Student 3'];
+        // Clear existing list
+        studentList.innerHTML = '';
+        // Populate student list
+        students.forEach(student => {
+            const listItem = document.createElement('li');
+            listItem.className = 'student-list-item';
+            listItem.innerHTML = `
+                <span class="student-name">${student}</span>
+                <div class="attendance-radio">
+                    <label><input type="radio" name="${student}-attendance" value="present"> Present</label>
+                    <label><input type="radio" name="${student}-attendance" value="absent"> Absent</label>
+                </div>
+            `;
+            studentList.appendChild(listItem);
+        });
+    });
+</script>
+
+</body>
+</html>

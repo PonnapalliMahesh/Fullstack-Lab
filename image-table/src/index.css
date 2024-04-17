@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  background-color: #fbfcb6;
+}
+code {
+  font-family: source-code-pro,Menio, Monaco, Consolas,'Courier New',
+  monospace;
+}
+h1 {
+  text-align:center;
+  margin-top: 10px;
+  width: 100%;
+  margin: 0;
+}
+.app-container {
+  text-align: 10px;
+}
+.table-container {
+  margin-top: 20px;
+  max-height:400px;
+  overflow-y:auto;
+
+}
+.upload-container{
+  margin-top:10px;
+  text-align:center;
+}
+.upload-container import{
+  display:inline-block;
+}
+.styled-table{
+  width:30%;
+  border-collapse:collapse;
+  margin:0 auto;
+
+}
+.styled-table th {
+  border:1px solid #3824ee;
+  padding:8px;
+  text-align:center;
+}
+.styled-table td{
+  border:1px solid #3824ee;
+  padding:8px;
+  text-align:center;
+}
+.image-cell img{
+  width:100%;
+  height:100%;
+  max-width:150px;
+  max-height:150px;
+  object-fit:cover;
+
+}
+.watermark{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  color:rgb(0,0,0,0.5);
+
+}

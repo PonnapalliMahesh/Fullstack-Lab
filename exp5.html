@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Higher ordernfunctions</title>
+    </head>
+    <body>
+        <h1>
+            Higher Order Functions
+        </h1>
+        <button onclick="filterEven()">Filter Even Numbers</button>
+        <button onclick="squareNumber()">Square Numbers</button>
+        <button onclick="calculateProduct()">calculate product</button>
+        <script>
+            const numbers = [1,2,3,4, 5, 6, 7, 8,9,10];
+            function displayResult(title,result){
+                alert(`${title}:`,result);
+                const resulltElement = document.createElement('p');
+                resulltElement.textContent = `${title}: ${result}`;
+                document.body.appendChild(resulltElement);
+            }
+            function filterEven(){
+                const isEven = num => num%2 ===0;
+                const filteredNumbers = numbers.filter(isEven);
+                displayResult("filtered even numbers",filteredNumbers);
+            }
+            function squareNumber(){
+                const  square = num => num **2;
+                const squaredNumbers=numbers.map(square);
+                displayResult ("squared numbers",squaredNumbers );
+            }
+            function calculateProduct(){
+                const multiply = (x,y) => x*y;
+                const product = numbers.reduce(multiply);
+                displayResult ('product of all numbers',product);
+            }
+
+        </script>
+    </body>
+</html>
